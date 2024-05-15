@@ -51,7 +51,7 @@ format:
 
 <hr>
   
-  This R Markdown aims to provide a brief summary of all diagnostic plots for your TREx experiment.<br> All large data files are available for download upon request.
+  This R Markdown aims to provide a brief summary of all diagnostic plots for your TREx experiment.<br> `FASTQ` files are available for download upon request.
 
 > Users receiving files from RSCshare are advised to delete all files once they have secure copied them to their own respective drives.<br> A copy of your data will be securely archived on our end and may incur a fee for future retrievals.
 

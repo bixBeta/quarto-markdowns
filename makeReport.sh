@@ -9,6 +9,8 @@ display_usage(){
   echo " -k2  = knit with all headers Filtered (2 projects e.g. PCA-flt.png)"
   echo " -k3  = knit w/o GeneBodyCov"
   echo " -k4  = knit w/o GeneBodyCov Filtered (2 projects e.g. PCA-flt.png)"
+  echo " -a1  = knit atac"
+  echo " -a2  = knit atac Filtered (2 projects e.g. PCA-flt.png)"
   echo "------------------------------------------------------------------------------------------------------------------"
 }
 
@@ -60,6 +62,27 @@ knit_nogbcov_filtered(){
 }
 
 
+knit_atac(){
+
+  scp /Users/fa286/Documents/GitHub/quarto-markdowns/qmds/atac-nf.qmd .
+  
+  quarto render atac-nf.qmd -P title:$T -P genome:$G -P annot:$A -o ${T}-Report.html
+
+  rm *.qmd
+
+}
+
+
+knit_atac_filtered(){
+
+  scp /Users/fa286/Documents/GitHub/quarto-markdowns/qmds/atac-filtered-nf.qmd .
+  
+  quarto render atac-filtered-nf.qmd -P title:$T -P genome:$G -P annot:$A -o ${T}-Report.html
+
+  rm *.qmd
+
+}
+
 raise_error() {
   echo "-------------------------------------------------------------------"
   local error_message="$@"
@@ -84,6 +107,14 @@ case $1 in
       ;;
     -k4|--knit4)
       knit_nogbcov_filtered
+      ;;
+
+    -a1)
+    knit_atac
+     ;;
+
+    -a2)
+      knit_atac_filtered
       ;;
 
      *)

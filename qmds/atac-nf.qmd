@@ -95,7 +95,7 @@ The raw fastq reads were first processed with __fastp__  package to:
 
 The filtered reads were then aligned to ` `r params$genome` ` reference genome with ` `r params$annot` ` annotations <br>
   
-The multiqc html (separate files), summarises the alignment statistics along with the summary of FRACTION of Reads in Peak (FRIP's) generated via <a href="https://bowtie-bio.sourceforge.net/bowtie2/index.shtml"> `bowtie2` </a> and <a href="https://subread.sourceforge.net/featureCounts.html"> `featureCounts` </a>
+The multiqc html (separate files), summarises the alignment statistics along with the summary of Fraction of Reads in Peak (FRIP's) generated via <a href="https://bowtie-bio.sourceforge.net/bowtie2/index.shtml"> `bowtie2` </a> and <a href="https://subread.sourceforge.net/featureCounts.html"> `featureCounts` </a>
   
 
 ## Counts Distribution

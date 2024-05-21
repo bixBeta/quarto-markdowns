@@ -84,93 +84,21 @@ Post-normalization, the medians should be consistent across samples and more sim
 
 ## Sample Clustering
 
-
-```{r , fig.show='hold', echo=F, results='asis'}
-
-# Begin the tabset panel
-cat('::: {.panel-tabset}\n')
-
-p1 <- list.files("./figures", pattern = "cluster", full.names = T)
-
-cat(paste0('## Cluster - All Samples ', '\n\n'))
-
-cat(paste0("![](", p1[grep("flt", p1, invert = T)] , ")", "{width=800}" ))
-
-cat('\n\n')
-
-cat(paste0('## Cluster - Filtered ', '\n\n'))
-
-cat(paste0("![](", p1[grep("flt", p1, invert = F)] , ")", "{width=800}" ))
-
-cat('\n\n')
-
-# End the tabset panel
-cat(':::\n')
-
-```
+![](figures/cluster.png){width="800px"}
 
 An euclidean distance is computed between samples, and the dendrogram is built upon the Ward criterion. We expect this dendrogram to group replicates and separate biological conditions.
 
 ## Principal Components Analysis
 
+![](figures/PCA.png){width="1200px"}
 
-
-```{r , fig.show='hold', echo=F, results='asis'}
-
-# Begin the tabset panel
-cat('::: {.panel-tabset}\n')
-
-p2 <- list.files("./figures", pattern = "PCA", full.names = T)
-
-cat(paste0('## PCA - All Samples ', '\n\n'))
-
-cat(paste0("![](", p2[grep("flt", p2, invert = T)] , ")", "{width=1000}" ))
-
-cat('\n\n')
-
-cat(paste0('## PCA - Filtered ', '\n\n'))
-
-cat(paste0("![](", p2[grep("flt", p2, invert = F)] , ")", "{width=1000}" ))
-
-cat('\n\n')
-
-# End the tabset panel
-cat(':::\n')
-
-```
 Another way of visualizing the experiment variability is to look at the first principal components of the PCA. On this figure, the first principal component (PC1) is expected to separate samples from the different biological conditions, meaning that the biological variability is the main source of variance in the data.
 
 ## MA-Plots
 
-
-```{r , fig.show='hold', echo=F, results='asis'}
-
-# Begin the tabset panel
-cat('::: {.panel-tabset}\n')
-
-p3 <- list.files("./figures", pattern = "MAPlot", full.names = T)
-
-cat(paste0('## MA - All Samples ', '\n\n'))
-
-cat(paste0("![](", p3[grep("flt", p3, invert = T)] , ")", "{width=800}" ))
-
-cat('\n\n')
-
-cat(paste0('## MA - Filtered ', '\n\n'))
-
-cat(paste0("![](", p3[grep("flt", p3, invert = F)] , ")", "{width=800}" ))
-
-cat('\n\n')
-
-# End the tabset panel
-cat(':::\n')
-
-```
+![](figures/MAPlot.png){width="1000px"}
 
 The above figure represents the MA-plot of the data for the comparisons done, where differentially expressed features are highlighted in red. A MA-plot represents the log ratio of differential expression as a function of the mean intensity for each feature. Triangles correspond to features having a too low/high log2(FC) to be displayed on the plot.
-
-
-
 
 ## Citations
 
@@ -182,4 +110,3 @@ citation("SARTools")
 ```
 
 </details>
-  

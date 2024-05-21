@@ -11,6 +11,7 @@ display_usage(){
   echo " -k4  = knit w/o GeneBodyCov Filtered (2 projects e.g. PCA-flt.png)"
   echo " -a1  = knit atac"
   echo " -a2  = knit atac Filtered (2 projects e.g. PCA-flt.png)"
+  echo " -s1  = knit smRNA"
   echo "------------------------------------------------------------------------------------------------------------------"
 }
 
@@ -83,6 +84,18 @@ knit_atac_filtered(){
 
 }
 
+
+knit_smrna(){
+
+  scp /Users/fa286/Documents/GitHub/quarto-markdowns/qmds/smrna.qmd .
+  
+  quarto render smrna.qmd -P title:$T -P genome:$G -P annot:$A -o ${T}-Report.html
+
+  rm *.qmd
+
+}
+
+
 raise_error() {
   echo "-------------------------------------------------------------------"
   local error_message="$@"
@@ -115,6 +128,10 @@ case $1 in
 
     -a2)
       knit_atac_filtered
+      ;;
+
+    -s1)
+      knit_smrna
       ;;
 
      *)
